@@ -57,7 +57,8 @@ class CocineroExperimentado inherits Cocinero {
     override method superoNivel() = comidasPreparadas.count({c => c.receta.esDificil()}) > 5
     
     override method evaluarNivel() {
-        if (self.superoNivel()) self = new CocineroChef(comidasPreparadas)
+        if (self.superoNivel()) {
+            self.nivel = nivelChef 
     }
 }
 
